@@ -26,7 +26,7 @@ def fast_adapt(learner, loss, base_steps, batch_size, start_of_epoch_weight, pre
     adaptation_data = torch.rand(base_steps, batch_size, 1).to(device)
     adaptation_labels = torch.sin(adaptation_data * 10)
     evaluation_data = torch.rand(batch_size, 1).to(device)
-    evaluation_labels = torch.ones(batch_size, 1).to(device)
+    evaluation_labels = torch.cos(evaluation_data * 10)
     total_train_error = 0
     batch_predictions = []
     batch_data = []
